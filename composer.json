@@ -1,0 +1,32 @@
+{
+    "name": "vgplay/acl",
+    "description": "acl",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^6|^7|^8",
+        "vgplay/laravel-redis-model": "^1",
+        "vgplay/contracts": "^1.1",
+        "vgplay/laravel-cached-setting": "^2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vgplay\\Acl\\": "src/",
+            "Vgplay\\Acl\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dung199551",
+            "email": "dung199551@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Vgplay\\Acl\\AclServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
