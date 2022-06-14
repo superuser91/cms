@@ -1,7 +1,7 @@
-@extends('vgplay::roles.layout')
+@extends(config('vgplay.roles.layout'))
 
 @section('content')
-    <div class="container-fluid px-0">
+    <div class="container-fluid">
         <div class="card">
             <div class="card-body">
                 <table class="table table-hover" id="datatable">

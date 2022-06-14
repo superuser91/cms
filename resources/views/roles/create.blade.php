@@ -1,7 +1,7 @@
 @extends(config('vgplay.roles.layout'))
 
 @section('content')
-    <div class="container-fluid px-0">
+    <div class="container-fluid">
         <div class="card">
             <div class="card-body">
                 <form action="{{ route('roles.store') }}" method="POST">
