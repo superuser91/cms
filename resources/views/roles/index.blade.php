@@ -21,7 +21,7 @@
                                     <td>{{ $role->display_name ?? '' }}</td>
                                     <td>{{ is_null($role->created_at) ? '' : $role->created_at->format('d/m/Y') }}</td>
                                     <td>
-                                        @if (auth(config('vgplay.acl.guard'))->user()->can(config('vgplay.acl.roles.permissions.update')))
+                                        @if (auth(config('vgplay.roles.guard'))->user()->can(config('vgplay.roles.roles.permissions.update')))
                                             <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-sm btn-info">
                                                 <i class="fas fa-edit"></i>
                                                 Sửa

@@ -18,7 +18,7 @@ class EloquentUserProvider extends ServiceProvider
      */
     public function __construct(HasherContract $hasher)
     {
-        parent::__construct($hasher, config('vgplay.acl.guard_model'));
+        parent::__construct($hasher, config('vgplay.roles.guard_model'));
     }
 
     /**
@@ -27,10 +27,10 @@ class EloquentUserProvider extends ServiceProvider
      */
     public function retrieveById($identifier)
     {
-        if (in_array(Cacheable::class, class_implements(config('vgplay.acl.guard_model')))) {
-            return config('vgplay.acl.guard_model')::fromCache()->find($identifier);
+        if (in_array(Cacheable::class, class_implements(config('vgplay.roles.guard_model')))) {
+            return config('vgplay.roles.guard_model')::fromCache()->find($identifier);
         }
 
-        return config('vgplay.acl.guard_model')::find($identifier);
+        return config('vgplay.roles.guard_model')::find($identifier);
     }
 }

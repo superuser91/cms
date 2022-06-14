@@ -1,4 +1,4 @@
-@extends('vgplay::roles.layout')
+@extends(config('vgplay.roles.layout'))
 
 @section('content')
     <div class="container-fluid px-0">

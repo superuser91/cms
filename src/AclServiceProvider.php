@@ -11,9 +11,13 @@ use Illuminate\Support\Facades\Auth;
 
 class AclServiceProvider extends ServiceProvider
 {
+    public function register()
+    {
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'vgplay.roles');
+    }
+
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'vgplay');
 
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 

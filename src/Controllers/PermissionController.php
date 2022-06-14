@@ -11,14 +11,14 @@ class PermissionController
 
     public function create(Request $request)
     {
-        $this->authorize(config('vgplay.acl.permissions.permissions.create'));
+        $this->authorize(config('vgplay.roles.permissions.permissions.create'));
 
         return view('vgplay::permissions.create');
     }
 
     public function store(Request $request)
     {
-        $this->authorize(config('vgplay.acl.permissions.permissions.create'));
+        $this->authorize(config('vgplay.roles.permissions.permissions.create'));
 
         #
     }

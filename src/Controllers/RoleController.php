@@ -24,7 +24,7 @@ class RoleController
 
     public function create(Request $request)
     {
-        $this->authorize(config('vgplay.acl.roles.permissions.create'));
+        $this->authorize(config('vgplay.roles.roles.permissions.create'));
 
         $permissions = Permission::fromCache()->all();
 
@@ -33,7 +33,7 @@ class RoleController
 
     public function store(Request $request, CreateRole $roleCreater)
     {
-        $this->authorize(config('vgplay.acl.roles.permissions.create'));
+        $this->authorize(config('vgplay.roles.roles.permissions.create'));
 
         try {
             $roleCreater->create($request->all());
@@ -50,7 +50,7 @@ class RoleController
 
     public function edit(Request $request, Role $role)
     {
-        $this->authorize(config('vgplay.acl.roles.permissions.create'));
+        $this->authorize(config('vgplay.roles.roles.permissions.create'));
 
         $role->load('permissions');
 
@@ -62,7 +62,7 @@ class RoleController
 
     public function update(Request $request, UpdateRole $roleUpdater, Role $role)
     {
-        $this->authorize(config('vgplay.acl.roles.permissions.create'));
+        $this->authorize(config('vgplay.roles.roles.permissions.create'));
 
         try {
             $roleUpdater->update($role, $request->all());
@@ -79,7 +79,7 @@ class RoleController
 
     public function destroy($id)
     {
-        $this->authorize(config('vgplay.acl.roles.permissions.delete'));
+        $this->authorize(config('vgplay.roles.roles.permissions.delete'));
 
         $role = Role::fromCache()->find($id);
 

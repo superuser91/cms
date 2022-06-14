@@ -6,8 +6,8 @@ use Vgplay\Acl\Controllers\RoleController;
 
 Route::middleware('web')->group(function () {
     Route::group([
-        'prefix' => config('vgplay.acl.prefix'),
-        'middleware' => config('vgplay.acl.middleware')
+        'prefix' => config('vgplay.roles.prefix'),
+        'middleware' => config('vgplay.roles.middleware')
     ], function () {
         Route::resource('permissions', PermissionController::class);
         Route::resource('roles', RoleController::class);
